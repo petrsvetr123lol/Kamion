@@ -15,8 +15,8 @@ namespace kamion_oop_form
         public Form1()
         {
             InitializeComponent();
-            
-            
+
+
         }
         public string cistic()
         {
@@ -51,6 +51,19 @@ namespace kamion_oop_form
             textbox_nosnost.Text = "";
             textbox_znacka.Text = "";
             label_udaje.Text = cistic();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int hodnota = int.Parse(textbox_naklad.Text);
+            if (radio_nalozit.Checked == true)
+            {
+                kamion.nalozit();
+            }
+            else if (radio_vylozit.Checked == true) 
+            {
+
+            }
         }
     }
 }

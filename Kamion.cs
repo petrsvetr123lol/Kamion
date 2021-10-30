@@ -8,21 +8,33 @@ namespace kamion_oop_form
 {
     class Kamion
     {
-        public string znacka_kamionu;
-        public int maximalni_nosnost;
+        public string znacka_kamionu {get; set;}
+        public int maximalni_nosnost {get; set;}
 
         public Kamion(string znacka, int nosnost)
         {
-            znacka_kamionu = znacka;
-            maximalni_nosnost = nosnost;
+            this.znacka_kamionu = znacka;
+            this.maximalni_nosnost = nosnost;
         }
         public string info()
         {
-            return "Kamion znacky " +znacka_kamionu +  " o maximální nosnosti " + maximalni_nosnost ;
+            return $"Kamion znacky {znacka_kamionu} o maximální nosnosti {maximalni_nosnost} kg" ;
         }
         public string cistic()
         {
             return "";
+        }
+        public string stav()
+        {
+            return "";
+        }
+        public int nakladka(int nakladka)
+        {
+            return nakladka;
+        }
+        public int vykladka()
+        {
+            return 0;
         }
 
      
