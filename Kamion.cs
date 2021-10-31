@@ -6,34 +6,51 @@ using System.Threading.Tasks;
 
 namespace kamion_oop_form
 {
-    class Kamion
+    public class Kamion
     {
-        public string znacka_kamionu {get; set;}
-        public int maximalni_nosnost {get; set;}
+        public static string znacka_kamionu;
+        public static int maximalni_nosnost;
+        public static int minimalni_nosnost;
+        public static int stav;
 
         public Kamion(string znacka, int nosnost)
         {
-            this.znacka_kamionu = znacka;
-            this.maximalni_nosnost = nosnost;
+            znacka_kamionu = znacka;
+            maximalni_nosnost = nosnost;
         }
-        public string info()
+        public string Info()
         {
             return $"Kamion znacky {znacka_kamionu} o maximální nosnosti {maximalni_nosnost} kg" ;
         }
-        public string cistic()
+        public string Stav()
         {
             return "";
         }
-        public string stav()
+        public static int Nakladka(int hodnota)
         {
-            return "";
+            if(stav <= hodnota && hodnota <= maximalni_nosnost)
+            {
+                stav += hodnota;
+                return hodnota; 
+            }
+            else if (stav + hodnota <= maximalni_nosnost)
+            {
+                return 0;
+            }
+            return 0;
         }
-        public int nakladka(int nakladka)
+        public static int Vykladka(int hodnota)
         {
-            return nakladka;
-        }
-        public int vykladka()
-        {
+            
+            if (stav <= hodnota && hodnota <= maximalni_nosnost)
+            {
+                stav -= hodnota;
+                return hodnota;
+            }
+            else if (stav - hodnota <= maximalni_nosnost)
+            {
+                return 0;
+            }
             return 0;
         }
 

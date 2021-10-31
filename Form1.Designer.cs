@@ -46,6 +46,7 @@ namespace kamion_oop_form
             this.naklad = new System.Windows.Forms.Label();
             this.textbox_naklad = new System.Windows.Forms.TextBox();
             this.label_udaje = new System.Windows.Forms.Label();
+            this.label_stav = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +137,7 @@ namespace kamion_oop_form
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.label_stav);
             this.panel1.Controls.Add(this.vaha);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.radio_nalozit);
@@ -236,6 +238,15 @@ namespace kamion_oop_form
             this.label_udaje.TabIndex = 10;
             this.label_udaje.Text = "Nastavte údaje výše";
             // 
+            // label_stav
+            // 
+            this.label_stav.AutoSize = true;
+            this.label_stav.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label_stav.Location = new System.Drawing.Point(104, 73);
+            this.label_stav.Name = "label_stav";
+            this.label_stav.Size = new System.Drawing.Size(0, 13);
+            this.label_stav.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +292,7 @@ namespace kamion_oop_form
         private System.Windows.Forms.TextBox textbox_naklad;
         private System.Windows.Forms.Label label_udaje;
         private System.Windows.Forms.Label vaha;
+        private System.Windows.Forms.Label label_stav;
     }
 }
 
