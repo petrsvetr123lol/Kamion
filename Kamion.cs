@@ -20,38 +20,50 @@ namespace kamion_oop_form
         }
         public string Info()
         {
-            return $"Kamion znacky {znacka_kamionu} o maximální nosnosti {maximalni_nosnost} kg" ;
+            return $"Kamion znacky {znacka_kamionu} o maximální nosnosti {maximalni_nosnost} kg";
         }
-        public string Stav()
+        public static int Stav()
         {
-            return "";
+            return stav;
         }
+
+        /// <pridat>
+        /// pridat podminku na prekroceni limitu pri pridavani hodnot
+        ///    
+      
+
         public static int Nakladka(int hodnota)
         {
-            if(stav <= hodnota && hodnota <= maximalni_nosnost)
+            if (hodnota < maximalni_nosnost)
             {
                 stav += hodnota;
-                return hodnota; 
+                return stav;
             }
-            else if (stav + hodnota <= maximalni_nosnost)
+            else if (stav + hodnota > maximalni_nosnost)
             {
                 return 0;
             }
-            return 0;
+            return stav;
         }
         public static int Vykladka(int hodnota)
         {
-            
-            if (stav <= hodnota && hodnota <= maximalni_nosnost)
+
+            if (hodnota > minimalni_nosnost)
             {
                 stav -= hodnota;
-                return hodnota;
+                return stav;
             }
-            else if (stav - hodnota <= maximalni_nosnost)
+            else if (stav - hodnota < minimalni_nosnost)
             {
                 return 0;
             }
-            return 0;
+            return stav;
+        }
+        public static int Zaparkovat()
+        {
+            stav = 0;
+            return stav;
+
         }
 
      

@@ -55,32 +55,33 @@ namespace kamion_oop_form
 
         private void button5_Click(object sender, EventArgs e)
         {
+            bool chyba = true;
             try
             {
                 int hodnota = int.Parse(textbox_naklad.Text);
                 if (radio_nalozit.Checked == true)
                 {
-                    int neco = Kamion.Nakladka(hodnota);
-                    if (neco == 0)
+                    int stav = Kamion.Nakladka(hodnota);
+                    if (stav == 0)
                     {
                         MessageBox.Show("Nenaložilo se nic z důvodu zadání nelogické hodnoty!");
                     }
                     else
                     {
-                        label_stav.Text = neco.ToString();
+                        label_stav.Text = stav.ToString();
                     }
                     textbox_naklad.Text = "";
                 }
                 else if (radio_vylozit.Checked == true) 
                 {
-                    int neco = Kamion.Vykladka(hodnota);
-                    if(neco == 0)
+                    int stav = Kamion.Vykladka(hodnota);
+                    if(stav == 0)
                     {
                         MessageBox.Show("Nevyložilo se nic z důvodu zadání nelogické hodnoty!");
                     }
                     else
                     {
-                        label_stav.Text = neco.ToString();
+                        label_stav.Text = stav.ToString();
                     }
                     textbox_naklad.Text = "";
                 }
@@ -94,9 +95,20 @@ namespace kamion_oop_form
             {
                 MessageBox.Show("Nezadané nebo chyně zadané hodnoty! Zadej hodnoty znovu.");
             }
-            
-            
-            
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            label_stav.Text = "";
+            Kamion.Zaparkovat();
+            MessageBox.Show("Kamion byl zaparkován a zboží bylo vyloženo!");
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int stav = Kamion.Stav();
+            MessageBox.Show($"Aktuálně je naloženo {stav} kg.");
         }
     }
 }

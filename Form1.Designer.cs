@@ -47,6 +47,8 @@ namespace kamion_oop_form
             this.textbox_naklad = new System.Windows.Forms.TextBox();
             this.label_udaje = new System.Windows.Forms.Label();
             this.label_stav = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,6 +139,8 @@ namespace kamion_oop_form
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label_stav);
             this.panel1.Controls.Add(this.vaha);
             this.panel1.Controls.Add(this.label6);
@@ -147,9 +151,9 @@ namespace kamion_oop_form
             this.panel1.Controls.Add(this.textbox_naklad);
             this.panel1.Controls.Add(this.label_udaje);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(26, 150);
+            this.panel1.Location = new System.Drawing.Point(12, 150);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 108);
+            this.panel1.Size = new System.Drawing.Size(526, 108);
             this.panel1.TabIndex = 10;
             // 
             // vaha
@@ -203,9 +207,9 @@ namespace kamion_oop_form
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(307, 68);
+            this.button5.Location = new System.Drawing.Point(431, 42);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 23);
+            this.button5.Size = new System.Drawing.Size(80, 23);
             this.button5.TabIndex = 11;
             this.button5.Text = "Nalož/vylož";
             this.button5.UseVisualStyleBackColor = false;
@@ -246,6 +250,32 @@ namespace kamion_oop_form
             this.label_stav.Name = "label_stav";
             this.label_stav.Size = new System.Drawing.Size(0, 13);
             this.label_stav.TabIndex = 17;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(431, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Zaparkovat";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(431, 13);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(80, 23);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "Stav";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -293,6 +323,8 @@ namespace kamion_oop_form
         private System.Windows.Forms.Label label_udaje;
         private System.Windows.Forms.Label vaha;
         private System.Windows.Forms.Label label_stav;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }
 
