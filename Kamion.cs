@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace kamion_oop_form
+﻿namespace kamion_oop_form
 {
     public class Kamion
     {
         public static string znacka_kamionu;
         public static int maximalni_nosnost;
         public static int minimalni_nosnost;
-        public static int stav;
+        public static int stav = 0;
 
         public Kamion(string znacka, int nosnost)
         {
@@ -26,36 +20,30 @@ namespace kamion_oop_form
         {
             return stav;
         }
-
-        /// <pridat>
-        /// pridat podminku na prekroceni limitu pri pridavani hodnot
-        ///    
-      
-
         public static int Nakladka(int hodnota)
         {
-            if (hodnota < maximalni_nosnost)
+            if (hodnota + stav >= maximalni_nosnost)
+            {
+                return 1;
+            }
+            else if (hodnota + stav <= maximalni_nosnost)
             {
                 stav += hodnota;
                 return stav;
-            }
-            else if (stav + hodnota > maximalni_nosnost)
-            {
-                return 0;
+                
             }
             return stav;
         }
         public static int Vykladka(int hodnota)
         {
-
-            if (hodnota > minimalni_nosnost)
+            if (hodnota - stav >= minimalni_nosnost)
+            {
+                return 2;
+            }
+            else if (hodnota - stav <= minimalni_nosnost)
             {
                 stav -= hodnota;
                 return stav;
-            }
-            else if (stav - hodnota < minimalni_nosnost)
-            {
-                return 0;
             }
             return stav;
         }
@@ -63,11 +51,10 @@ namespace kamion_oop_form
         {
             stav = 0;
             return stav;
-
         }
-
-     
+        public static string Cistic()
+        {
+            return "";
+        }
     }
-
-
 }
